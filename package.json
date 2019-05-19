@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "serve": "live-server public/",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,12 +18,14 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "live-server": "^1.2.1",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
-    "react-addons-shallow-compare": "^15.6.2",
-    "react-dates": "^20.2.0",
+    "react-addons-shallow-compare": "^15.6.0",
+    "react-dates": "^12.7.0",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
@@ -34,6 +38,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@types/react-dates": "^17.1.5",
     "webpack-cli": "^3.3.2"
   }
 }

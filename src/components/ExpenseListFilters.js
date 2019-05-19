@@ -43,7 +43,6 @@ class ExpenseListFilters extends React.Component {
                     isOutsideRange={() => false}
                     showClearDates={true}
                     showDefaultInputIcon={true}
-                    small={false}
                 />
             </div>
         );
