@@ -9,7 +9,7 @@ module.exports = (env) => {
     return {
         entry: './src/app.js',
         output: {
-            path: path.join(__dirname, 'public'), //we use the dirname var to get current dirname
+            path: path.join(__dirname, 'public', 'dist'), //we use the dirname var to get current dirname
             filename: 'bundle.js'
         },
         module: {
@@ -30,7 +30,8 @@ module.exports = (env) => {
         devtool: isProduction ? 'source-map' : 'inline-source-map', // for debug, we get the actual src files we wrote and not the bundle file on comments & errors in the browser console
         devServer: {
             contentBase: path.join(__dirname, 'public'),
-            historyApiFallback: true
+            historyApiFallback: true,
+            publicPath: '/dist/'
         }
     };
 }
