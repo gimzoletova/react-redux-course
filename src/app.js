@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import storeConfig from './store/configureStore';
 import { addExpense } from './actions/expenses';
 
-import 'react-dates/initialize';
+// import 'react-dates/initialize';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
