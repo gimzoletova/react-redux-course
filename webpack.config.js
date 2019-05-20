@@ -21,12 +21,13 @@ module.exports = (env) => {
                 test: /\.s?css$/,
                 // use: ['style-loader', 'css-loader', 'sass-loader']
                 use: CSSExtract.extract({
+                    fallback: 'style-loader', 
                     use: [{loader: 'css-loader', options: {sourceMap: true}},
                           {loader: 'sass-loader', options: {sourceMap: true}}]
                 })
             }]
         },
-        plugins: [CSSExtract],
+        plugins: [new ExtractTextPlugin('styles.css')],
         devtool: isProduction ? 'source-map' : 'inline-source-map', // for debug, we get the actual src files we wrote and not the bundle file on comments & errors in the browser console
         devServer: {
             contentBase: path.join(__dirname, 'public'),
