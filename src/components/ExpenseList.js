@@ -7,7 +7,7 @@ import filterAndSort from '../selectors/expenses';
 const ExpenseList = (props) => (
     <div>        
         <h1>ExpenseList</h1>
-        {props.expenses.map((expense) => <ExpenseListItem {...expense} key={expense.id}/>)}
+        {props.expenses.map((expense, index) => <ExpenseListItem {...expense} key={index}/>)}
     </div>
 );
 

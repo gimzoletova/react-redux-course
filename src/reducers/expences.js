@@ -2,6 +2,8 @@
 const expensesReducerDefaultState = [];
 export default (state = expensesReducerDefaultState, action) => {
     switch (action.type) {
+        case 'SET_EXPENSES':
+            return action.expenses;
         case 'ADD_EXPENCE': 
             // return state.concat(action.expense) or the new es6 synthax:
             return [...state, action.expense];
