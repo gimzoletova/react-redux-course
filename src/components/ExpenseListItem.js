@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import numeral from 'numeral';
 
-
-import { removeExspense } from '../actions/expenses';
+import { startRemoveExspense } from '../actions/expenses';
 
 const ExpenseListItem = (props) => (
     <div>
@@ -16,7 +15,7 @@ const ExpenseListItem = (props) => (
             {moment(props.createdAt).format('DD/MM/YYYY')}
         </p>
         <button onClick={() => {
-            props.dispatch(removeExspense(props.id));
+            props.dispatch(startRemoveExspense(props.id));
         }}>Remove</button>
     </div>
 );

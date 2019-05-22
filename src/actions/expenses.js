@@ -27,17 +27,33 @@ export const stratAddExpense = ({ description = '', note = '', amount = 0, creat
       database.ref('expenses').push({ description, note, amount, createdAt})
       .then((ref) =>{
         dispatch(addExpense({id: ref.key, description, note, amount, createdAt}));
-      })
-    }
+      });
+    };
 };
 // REMOVE_EXPENCE
 export const removeExspense = (id) => ({
     type: 'REMOVE_EXPENCE',
     id
 });
+export const startRemoveExspense = (id) => {
+  return(dispatch) => {
+    database.ref(`expenses/${id}`).remove()
+    .then(() => {
+      dispatch(removeExspense(id));
+    });
+  };
+};
 // EDIT_EXPENCE
 export const editExpense = (id, updates) => ({
     type: 'EDIT_EXPENCE',
     id,
     updates
 });
+export const startEditExpense = (id, updates) => {
+  return(dispatch) => {
+    database.ref(`expenses/${id}`).update(updates)
+    .then(() => {
+      dispatch(editExpense(id, updates));
+    });
+  };
+};
