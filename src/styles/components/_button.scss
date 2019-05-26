@@ -1,0 +1,29 @@
+.button {
+    background: $blue;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: $font-size-large;
+    line-height: 1;
+    padding: $s-size;
+    text-decoration: none;
+}
+
+.button_link {
+    background: none;
+}
+
+.button_secondary {
+    background: #888888;
+}
+
+.remove-button {   
+    background: none;
+    color: red;
+    font-weight: bold;
+    padding: $s-size;
+    position: absolute;
+    top: $m-size;
+    right: 0;
+    width: 6em;
+}

@@ -7,16 +7,20 @@ import numeral from 'numeral';
 import { startRemoveExspense } from '../actions/expenses';
 
 const ExpenseListItem = (props) => (
-    <div>
-        <Link to={`/edit/${props.id}`}><h3>{props.description}</h3></Link>
-        <p>
-            {numeral(props.amount/100).format('0,0.00')} 
-            - 
-            {moment(props.createdAt).format('DD/MM/YYYY')}
-        </p>
-        <button onClick={() => {
+    <div className="list-item_wrapper">
+        <Link className="list-item" to={`/edit/${props.id}`}>
+            <div>
+                <h3 className="list-item__title">{props.description}</h3>
+                <span className="list-item__subtitle">{moment(props.createdAt).format('DD/MM/YYYY')}</span>
+            </div>
+            <div>
+            <h3 className="list-item__data">{numeral(props.amount/100).format('0,0.00')}</h3>
+            </div> 
+            <div className="list-item__fill"></div>           
+        </Link>        
+        <button className="button remove-button" onClick={() => {
             props.dispatch(startRemoveExspense(props.id));
-        }}>Remove</button>
+        }}>X</button>
     </div>
 );
 

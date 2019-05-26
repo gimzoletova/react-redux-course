@@ -14,6 +14,8 @@ import './styles/styles.scss';
 import {AppRouter, history} from './routers/AppRouter';
 import {firebase} from './firebase/firebase';
 
+import LoadPage from './components/LoadPage';
+
 const store = storeConfig();
 const jsx = (
     <Provider store={store}>
@@ -29,7 +31,7 @@ const renderApp = () => {
 }
 
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadPage />, document.getElementById('app'));
 
 
 firebase.auth().onAuthStateChanged((user) => {
